@@ -14,7 +14,18 @@
 
 ![](../img/w2.png)
 
-    
-    
-    
+3. 完成配置了以后刷新页面，出现刚开始没有样式的情况，有可能是和css的配置有关。
 
+![](../img/1.gif)    
+    
+    
+解决方法：
+
+```
+const extractLess = new ExtractTextWebpackPlugin({
+        filename: 'css/[name].css',
+        allChunks: true//加上此句话即可
+    })
+    
+    匹配css的loader处理好
+```
