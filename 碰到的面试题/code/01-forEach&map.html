@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var arr = [1,23,4,5];
+    /* arr.forEach((item,index,arr) => {
+        console.log(item,index,arr);
+    }) */
+
+  /*  console.log(arr.map((item,index,arr) => {
+       console.log(item,index,arr);
+        return index
+    }));  */
+
+//=> forEach跳出的方式
+/* try{
+    arr.forEach((item,index) => {
+      
+        if(item === 23) {
+            throw new Error('jfjj')
+        }
+        console.log(item);
+    })
+}catch(e){
+    if(e.message != 'jfjj') throw e;
+}
+alert('a') */
+
+arr.forEach((item,index) => {
+    if(item === 23){
+        arr.length = 0;
+        return
+    }
+    console.log(item);
+})
+alert('a')
+</script>
+</html>
