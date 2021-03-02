@@ -1,0 +1,17 @@
+.App div{
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+}
+.red{
+    background-color:red;
+}
+.green{
+    background-color:green;
+}
+.yellow{
+    background-color:yellow;
+}
+.black{
+    background-color:black;
+}

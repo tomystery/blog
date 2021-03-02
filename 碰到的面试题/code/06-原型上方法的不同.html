@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /* 
+        数组上的方法：
+            1. every  是检测数组上的每一个，是否满足条件
+            2. entries 返回给定对象自身可枚举属性的键值对数组[['name',23],['key',33]]
+            3. copyWithin  方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，不会改变原数组的长度。
+            4. fill  方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。
+    */
+    
+  /*  let ages = [12,34,{key:2,value:'name'},[[88,99]]];
+    var obj = {
+        name:'23',
+        key:33
+    }
+    const arr2 = [
+        {key:1,value:1},
+        {key:2,value:2},
+        {key:3,value:3},
+    ] */
+
+
+    // console.log(ages.every(item => item > 8))
+
+    // console.log(Object.entries(obj));
+
+    /* console.log(ages.copyWithin(0,2));
+    console.log(ages);
+    ages[0].key=3;
+    console.log(JSON.stringify(ages)); */
+
+
+    /* 
+        fill默认有三个参数，要填充的数、起始索引start(默认0)、终止索引end,一般是数组的长度（不包括）
+            如果索引是负数，那么索引的值是start
+    */
+
+   /*  console.log(ages.fill('3'));
+    console.log(ages.fill(3,1,3));
+    console.log(ages.fill(8,-3,-1));
+    console.log(ages.fill('hi',-1,-3));//('hi',3,1) */
+    
+    // console.log(arr2.flatMap(item => [item.key]));
+
+    // let a = [5, 4, -3, 20, 17, -33, -4, 18]
+    //       |\  \  x   |  | \   x   x   |
+    //      [4,1, 4,   20, 16, 1,       18]
+//    console.log(a.flatMap(item => item > 0 ? 
+//     item % 2 === 0 ?  [item] : [item-1,1]
+//     :[])) 
+
+
+
+//=> 5. toString的区别：
+/* function f1(){ //函数
+}
+let date = new Date();//日期
+let reg = new RegExp(/123/);//正则
+let n = 1;
+let b = new Boolean(false);
+let b1 = false;
+
+console.log(f1.toString(),reg.toString(),n.toString(),b.toString(),b1.toString());
+ */
+
+
+//=> 6. toLocalString()
+/* let number1 = 22223333333.877;
+console.log(number1.toLocaleString()) */
+
+
+//=> 7. isPrototypeOf 用于检查一个对象是否在另一个对象的原型链上
+/* function Tree(age){
+    this.age = age;
+    this.color = 'red';
+}
+Tree.prototype.getColor = function(color){
+    this.color = color;
+}
+var tree1 = new Tree(23);
+tree1.getColor('yellow');
+console.log(tree1)
+console.log(tree1.getColor.isPrototypeOf(tree1)) */
+
+
+//=> 8. object.toLocalString()
+/* console.log({}.toLocalString()) */
+
+//=> 9. object.valueOf();
+var obj = new Object();
+var arr = [1,23,4];
+var date = new Date();
+var b = new Boolean(true) ;
+
+console.log(Object.prototype.valueOf.call(date),date.valueOf());
+console.log(Object.prototype.valueOf.call(b),b.valueOf())
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+function mm(){
+    console.log('haha');
+}
+
+var a = typeof(/a/);
+var b = typeof(mm);
+
+console.log(/a/,mm);
+
+console.log(Object.prototype.toString.call(/a/));
+console.log(Object.prototype.toString.call(mm));
+
+function _type(val){
+   return Object.prototype.toString.call(val)
+}
+function deepClone(obj){
+    //判断类型，基本的返回出去，null例外，obj的如果是正则和日期的除外
+    if(typeof obj !== 'object') return;
+    //如果是正则
+    if(_type(obj) === ['object RegExp']) return new RegExp(obj);
+    //如果是日期
+    if(_type(obj)=== ['object Date']) return new Date(obj);
+    let newObj = new obj.constructor;
+    for(let key of obj){
+        if(!newObj.hasOwnProperty(key)) {}
+    }
+    
+}
+var arr = [10,20,/abc/,function(){}]
+var m = deepClone(arr)
+</script>
+</html>
