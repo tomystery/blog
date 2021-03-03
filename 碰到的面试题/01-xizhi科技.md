@@ -55,4 +55,19 @@ console.log(y); //11
 `06-原型上方法的不同.html`
 
 10. 有三个请求R1,R2,R3,如果不用promise.all(),如何实现三个请求全部完成之后执行回到函数fn
+
+## 面试题
+1. 前端监控 前端的界面 -> 监控的网站  跨域用的是1像素的1X1的那个
+2. 原型 原型链
+3. 作用域 作用域链
+4. react的无状态组件 props传入，自己不去定义
+5. webpack常用的plugin插件有那些？
+6. pureComponent 和 class Component的区别？
+7. `Object.assign`的对象是可以改变的吗？
+8. 回流和重绘
+9. 判断怎么样是一个空对象  `Object.keys()`
+  
+10. js的加载 async和defer是什么意思
+  * async 是异步请求，请求后按照script加载的顺序去执行
+  * defer 是请求完成后谁先返回就先加载谁
   

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 500px;
+      }
+      ul {
+        padding: 0;
+      }
+      li {
+        list-style: none;
+      }
+      #u1 {
+        display: flex;
+      }
+      #u1 li {
+        flex: 1;
+        text-align: left;
+        border: 1px solid #ccc;
+      }
+      #u1 .active {
+        color: red;
+      }
+
+      #u2-container {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        border: 1px solid #ccc;
+      }
+      #u2 li {
+        display: none;
+      }
+      #u2 .active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <ul id="u1">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+      <div id="u2-container">
+        <ul id="u2">
+          <li class="active">我爱看电影</li>
+          <li>我爱看书</li>
+          <li>我爱运动</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script>
+    var tabList = u1.getElementsByTagName("li");
+    var tabDiv = u2.getElementsByTagName("li");
+    console.log(tabList, tabDiv);
+    for (var i = 0; i < tabList.length; i++) {
+
+        //方法一 闭包解决：
+      /* tabList[i].onclick = (function(n){
+          return function(){
+              changeTab(n)
+          }
+      })(i) */
+
+      //方法二 闭包解决：
+      /* (function(n){
+        tabList[n].onclick = function(){
+            changeTab(n)
+        }
+      })(i) */
+
+      //方法三：自定义属性
+      tabList[i].index = i;
+      tabList[i].onclick = function(){
+          changeTab(this.index)
+      }
+
+      
+    }
+
+
+
+    function changeTab(curIndex) {
+        console.log(curIndex);
+      for (var i = 0; i < tabList.length; i++) {
+        tabList[i].className = "";
+        tabDiv[i].className = "";
+      }
+      tabList[curIndex].className = "active";
+      tabDiv[curIndex].className = "active";
+    }
+  </script>
+</html>

@@ -34,7 +34,9 @@ function deepClone(obj){
     if(_type(obj)=== ['object Date']) return new Date(obj);
     let newObj = new obj.constructor;
     for(let key of obj){
-        if(!newObj.hasOwnProperty(key)) {}
+        if(!newObj.hasOwnProperty(key)) {
+            
+        }
     }
     
 }

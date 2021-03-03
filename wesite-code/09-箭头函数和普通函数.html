@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">打开新网页</button>
+</body>
+<script>
+//一：
+/* var id = 'Global';
+
+function fun1() {
+    // setTimeout中使用普通函数
+    console.log(this);
+    setTimeout(function(){
+        console.log(this.id);
+    }, 2000);
+}
+
+function fun2() {
+    console.log(this);
+    // setTimeout中使用箭头函数
+    setTimeout(() => {
+        console.log(this.id);
+    }, 2000)
+}
+
+fun1.call({id: 'Obj'});     // 'Global'
+
+fun2.call({id: 'Obj'});     // 'Obj' */
+
+//二：
+/* let myObj = {
+  name: 'jsliang',
+  showThis: function() {
+    console.log(this.name);
+  },
+};
+let foo = myObj.showThis;
+foo(); // 输出啥？ */
+
+(function() {
+      const btn = document.querySelector('.btn');
+      btn.onclick = function() {
+        window.open('index.html', 'jsliang 的网页');
+      }
+    })()
+</script>
+</html>

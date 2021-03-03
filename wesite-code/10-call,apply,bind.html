@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    /*   Function.prototype.myCall = function (context, ...args) {
+      //this 是下面的fn 最后要执行的函数
+      //obj 是要指向的对象
+
+      //如果是null/undefined 那么context执行的是window
+      if (context === null || context === undefined) {
+        context === window;
+      } else {
+        if (["number", "boolean", "string"].includes(typeof context)) {
+          if (typeof context === "number") {
+            context = new Number(context);
+          } else if (typeof context === "boolean") {
+            context = new Boolean(context);
+          } else if (typeof context === "string") {
+            context = new String(context);
+          }
+        }
+      }
+      context.$fn = this;
+      const result = context.$fn(...args); //利用了【谁.】那么点的那个就是对象
+      delete context.$fn;
+      return result;
+    };
+
+    function fn(x, y) {
+      console.log(this, x, y);
+    }
+    let obj = 1;
+    fn.myCall(obj, 1, 2, 3); */
+  </script>
+
+  <script>
+    /*  Function.prototype.myApply = function (context, args) {
+      if (context === null || context === undefined) {
+        context === window;
+      } else {
+        if (["number", "boolean", "string"].includes(typeof context)) {
+          if (typeof context === "number") {
+            context = new Number(context);
+          } else if (typeof context === "boolean") {
+            context = new Boolean(context);
+          } else if (typeof context === "string") {
+            context = new String(context);
+          }
+        }
+      }
+      context.$fn = this;
+      const result = context.$fn(...args); //利用了【谁.】那么点的那个就是对象
+      delete context.$fn;
+      return result;
+    };
+
+    
+    function fn(x, y) {
+      console.log(this, x, y);
+    }
+    let obj = {
+      a: 1,
+      b: 2,
+    };
+    fn.myApply(obj, [1, 2, 3]); */
+  </script>
+
+  <script>
+    /* Function.prototype.myBind = function (context) {
+      //this是要执行的函数
+      //context是要指向的对象
+      if (context === null || context === undefined) {
+        context = window;
+      }
+      const argsA = [].slice.call(arguments, 1);
+      _this = this;
+      return function (...args) {
+        const argsB = [].slice.call(arguments, 0);
+        _this.apply(context, argsA.concat(argsB));
+      };
+    };
+    function fn(x, y) {
+      console.log(this, x, y);
+    }
+    let obj = {
+      a: 1,
+      b: 2,
+    };
+    let mm = fn.myBind(obj);
+    mm(1, 2); */
+  </script>
+  <script>
+    function fn() {
+      console.log(this, arguments);
+    }
+    let obj = {
+      a: 1,
+      b: 2,
+    };
+    let mm = (new fn).bind(obj, 1);
+    mm(1, 2);
+  </script>
+</html>
