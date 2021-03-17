@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+//怎么找到 8就在里面，数据是从左到右，从上到下递增的情况下
+const arr = [
+  [1, 3, 5],
+  [2, 4, 6],
+  [7, 9, 10],
+]
+
+function findNumber(arr,num){
+    // const rows = arr.length;
+    const cols = arr[0].length;
+    for(let item of arr){
+        //如果子数组的最小值大于num，则跳到下一个子数组
+        if(item[0] > num){
+            continue
+        }
+        //如果子数组的最大值小于num，则跳到下一个子数组
+        if(item[cols -1] < num){
+            continue
+        }
+        if(item[0] <= num  && item[cols-1] >= num){
+            if(item.includes(num)){
+                return true;
+            }
+        }
+
+    }
+    //其他情况没找到 
+    return false;
+
+}
+console.log(findNumber(arr,8))
+
+</script>
+<script>
+
+function findNum(arr) {
+  const num = 8
+  for (const subArr of arr) {
+    // 如果子数组最后一位小于 8,那么 8 肯定不再此子数组中,跳过此数组
+    if (subArr[subArr.length - 1] < num) {
+      continue
+    }
+
+    // 如果子数组第一位大于 8,那么根据规则,后续数组必然不会包含 8,返回最终结果 `false`
+    if (subArr[0] > num) {
+      return false
+    }
+
+    // 当子数组第一位小于 8,最后一位大于 8 时,判断 8 是否在此子数组中.如果存在返回最终结果 `true`
+    if (subArr.includes(num)) {
+      return true
+    }
+  }
+  // 当上述遍历没有查找到 8 时,说明数组中不存在 8,返回最终结果 `false`
+  return false
+}
+</script>
+</html>

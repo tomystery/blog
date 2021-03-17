@@ -70,4 +70,5 @@ console.log(y); //11
 10. js的加载 async和defer是什么意思
   * async 是异步请求，请求后按照script加载的顺序去执行
   * defer 是请求完成后谁先返回就先加载谁
+11. 原型链的终点是什么？`null`
   

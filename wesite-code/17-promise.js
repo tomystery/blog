@@ -1,5 +1,3 @@
-```js
-//简易版本
 class MyPromise{
     constructor(executor){
         this.status = 'pending';//fulfilled rejected pending
@@ -51,5 +49,6 @@ class MyPromise{
             })
         })
 }
+    
+
 }
-```
