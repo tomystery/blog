@@ -25,7 +25,7 @@ console.log(Object.prototype.toString.call(mm));
 function _type(val){
    return Object.prototype.toString.call(val)
 }
-function deepClone(obj){
+function _deepClone(obj){
     //判断类型，基本的返回出去，null例外，obj的如果是正则和日期的除外
     if(typeof obj !== 'object') return;
     //如果是正则
@@ -43,6 +43,7 @@ function deepClone(obj){
     
 }
 var arr = [10,20,/abc/,function(){}]
-var m = deepClone(arr)
+var m = _deepClone(arr)
+console.log('m:',m)
 </script>
 </html>
