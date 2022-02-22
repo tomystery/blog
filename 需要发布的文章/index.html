@@ -10,7 +10,7 @@
   
 </body>
 <script>
- function _type(value){
+function _type(value){
     return Object.prototype.toString.call(value);
   }
   function _deepClone(obj){
@@ -25,30 +25,24 @@
 
    /*
     obj.constructor:找到的是所属类原型上的constructor,而原型上的constructor指向的是当前类本身=> 保证
-    传递进来什么类型的值，我们最后创建newObj也是对应类型的 
+    传递进来什么类型的值，最后创建newObj也是对应类型的 
      */
     let newObj = new obj.constructor;
     for(let key in obj){
       console.log('key:',key,obj.hasOwnProperty(key))
       if(!obj.hasOwnProperty(key)) break;
-      /* 如果某一项的值是引用值，我们还需要进一步迭代循环，把引用值中的每一项也进一步克隆 => 深度克隆 */
+      /* 如果某一项的值是引用值，还需要进一步迭代循环，把引用值中的每一项也进一步克隆 => 深度克隆 */
      
       newObj[key] = _deepClone(obj[key]); 
     }
     return newObj
   }
-var arr = [10,20,/abc/,function(){}]
-var m = _deepClone(arr)
 
-console.log('m:',m)
 function aa(){
   this.a = 'aa';
   this.b = 'bb';
+}
 
-}
-aa.getB = function(){
-  return this.b;
-}
 aa.prototype.getA = function(){
   return this.a;
 }

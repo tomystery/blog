@@ -24,3 +24,24 @@
 
 # 3. 在项目启动的时候遇到问题 尤其在linux系统中
 1. [监控的文件数太多，使得yarn run **启动报错的问题](https://blog.csdn.net/feinifi/article/details/103777406)
+
+# 4. linux卸载node npm 干净
+```js
+  #apt-get 卸载
+  sudo apt-get remove --purge npm
+  sudo apt-get remove --purge nodejs
+  sudo apt-get remove --purge nodejs-legacy
+  sudo apt-get autoremove
+
+  #手动删除 npm 相关目录
+  rm -r /usr/local/bin/npm
+  rm -r /usr/local/lib/node-moudels
+  find / -name npm
+  rm -r /tmp/npm* 
+
+
+  //node -v之后如果还有node的版本号显示
+  sudo whereis node //查看node的地址
+  sudo rm -rf 上面显示的地址
+
+```
