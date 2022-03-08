@@ -45,3 +45,10 @@
   sudo rm -rf 上面显示的地址
 
 ```
+# 5. 查看系统内存或者硬盘的占用情况
+1. 对Linux磁盘管理稍微有一些学习和经验的朋 友们应该都知道df、du和fdisk这三个常用命令：df用于检查文件系统磁盘占用情况，du检查磁盘空间占用情况，而fdisk用于磁盘分区。
+  * `df -h `:查看cpu占用的情况
+  * `du -hs * | sort -h` :磁盘占用情况排序 你在哪个文件夹下就可以看到哪个文件夹的情况
+  * `lsblk -p -f` 
+![](./assets/img/linux.png)
+![](./assets/img/disk.png)
