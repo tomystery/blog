@@ -2,10 +2,13 @@
 ## 1.1 重命名和移动相关
   1. 重命名文件夹 `mv A B` 将A文件夹命名为B
   2. 移动A文件夹到B下面
+  3. [远程间服务器的移动](https://blog.csdn.net/szy525525/article/details/85327416?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-1.base&spm=1001.2101.3001.4242)
 ## 1.2 打开文件夹相关
   1. 打开Home `nautilus`
   2. 打开当前文件夹`nautilus .`
   3. 打开制定的文件夹`nautilus /var/www/aaa` 打开aaa这个文件夹
+
+
 
 ## 1.3 包相关
   1. 下载之后进行安装 ` sudo dpkg -i <包名>`
