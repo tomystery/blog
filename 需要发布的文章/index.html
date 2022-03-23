@@ -1,4 +1,15 @@
-```js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
 function _type(value){
     return Object.prototype.toString.call(value);
   }
@@ -26,27 +37,17 @@ function _type(value){
     }
     return newObj
   }
-var arr = [10,20,/abc/,function(){}]
-var m = _deepClone(arr)
 
-console.log('m:',m)
 function aa(){
   this.a = 'aa';
   this.b = 'bb';
-  this.obj = {
-      name:'joy',
-      address:{
-          a:'22'
-      }
-  }
 }
-aa.getB = function(){
-  return this.b;
-}
+
 aa.prototype.getA = function(){
   return this.a;
 }
 
 var instanceA = new aa();
 var cloneA = _deepClone(instanceA);
-```
+</script>
+</html>

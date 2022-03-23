@@ -24,3 +24,32 @@
 
 # 3. 在项目启动的时候遇到问题 尤其在linux系统中
 1. [监控的文件数太多，使得yarn run **启动报错的问题](https://blog.csdn.net/feinifi/article/details/103777406)
+
+# 4. linux卸载node npm 干净
+```js
+  #apt-get 卸载
+  sudo apt-get remove --purge npm
+  sudo apt-get remove --purge nodejs
+  sudo apt-get remove --purge nodejs-legacy
+  sudo apt-get autoremove
+
+  #手动删除 npm 相关目录
+  rm -r /usr/local/bin/npm
+  rm -r /usr/local/lib/node-moudels
+  find / -name npm
+  rm -r /tmp/npm* 
+
+
+  //node -v之后如果还有node的版本号显示
+  sudo whereis node //查看node的地址
+  sudo rm -rf 上面显示的地址
+
+```
+ 然后使用nvm安装新的node
+# 5. 查看系统内存或者硬盘的占用情况
+1. 对Linux磁盘管理稍微有一些学习和经验的朋 友们应该都知道df、du和fdisk这三个常用命令：df用于检查文件系统磁盘占用情况，du检查磁盘空间占用情况，而fdisk用于磁盘分区。
+  * `df -h `:查看cpu占用的情况
+  * `du -hs * | sort -h` :磁盘占用情况排序 你在哪个文件夹下就可以看到哪个文件夹的情况
+  * `lsblk -p -f` 
+![](./assets/img/linux.png)
+![](./assets/img/disk.png)

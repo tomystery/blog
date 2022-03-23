@@ -43,11 +43,18 @@ fun2.call({id: 'Obj'});     // 'Obj' */
 let foo = myObj.showThis;
 foo(); // 输出啥？ */
 
-(function() {
+/* (function() {
       const btn = document.querySelector('.btn');
       btn.onclick = function() {
         window.open('index.html', 'jsliang 的网页');
       }
-    })()
+    })() */
+
+function test(){
+  const t = () => {console.log(this)}
+  t();
+}
+test();
+
 </script>
 </html>
